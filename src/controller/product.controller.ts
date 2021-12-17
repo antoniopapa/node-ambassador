@@ -80,8 +80,10 @@ export const ProductsBackend = async (req: Request, res: Response) => {
 
     res.send({
         data,
-        total,
-        page,
-        last_page: Math.ceil(total / perPage)
+        meta: {
+            total,
+            page,
+            last_page: Math.ceil(total / perPage)
+        }
     });
 }
